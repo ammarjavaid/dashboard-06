@@ -1,0 +1,153 @@
+
+.sidebarOpen{
+    left: 0 !important;
+    // box-shadow: rgba(0, 0, 0, 1) 0px 1px 4px;
+}
+
+.sideBAr{
+    background-color: #191C24;
+    box-shadow: 1px 0px 4px var(--greyText);
+    width: 18%;
+    height: 100%;
+    gap: 3rem;
+    position: fixed;
+    overflow: auto;
+    // box-shadow: rgba(0, 0, 0, 1) 0px 1px 4px;
+
+    @media screen and (max-width: 1050px) {
+        position: fixed;
+        left: -70%;
+        width: 25% !important;
+        box-shadow: rgba(0, 0, 0, 1) 0px 1px 4px;
+    }
+    @media screen and (max-width: 768px) {
+        width: 35% !important;
+    }
+    @media screen and (max-width: 550px) {
+        width: 40% !important;
+    }
+    @media screen and (max-width: 450px) {
+        width: 50% !important;
+    }
+    @media screen and (max-width: 390px) {
+        width: 60% !important;
+    }
+
+    .logoDiv{
+        padding: 2rem 2.5rem 1rem 2.5rem;
+        cursor: pointer;
+        h2{
+            font-size: 22px;
+            color: #3F6493;
+        }
+    }
+    .menuDiv, .settingsDiv{
+        .divTitle{
+            font-size: var(--h3FontSize);
+            color: #fff;
+            padding: 1.5rem 1.5rem 1.5rem 1rem;
+        }
+        .menuLists{
+            .listItem{
+                padding: .2rem 1.5rem .2rem 2rem;
+                width: 100%;
+                position: relative;
+                &:before{
+                    position: absolute;
+                    content: "";
+                    height: 0%;
+                    left: 0;
+                    width: 5px;
+                    bottom: 0;
+                    border-top-right-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                    background: #3F6493;
+                }
+                .menuLink{
+                    color: #fff;
+                    font-weight: 500;
+                    transition: 0;
+                    .icon{
+                        margin-right: .5rem;
+                    }
+                }
+                &:hover .menuLink{
+                    color: #3F6493;
+                    transition: 0;
+                }
+                &:hover::before{
+                    height: 100%;
+                    transition: .3s ease;
+                }
+            }
+        }
+    }
+
+    .sideBarCard{
+        background-color: #191C24 !important;
+        width: 100%;
+        margin-top: 2rem;
+        padding: 1rem;
+        text-align: center;
+        position: relative;
+
+        .icon{
+            position: absolute;
+            background: #191C24 !important;
+            border: 10px solid  #242938;
+            font-size: 3rem;
+            border-radius: 50%;
+            top: -8px;
+            right: 50%;
+            transform: translate(50%);
+            z-index: 100;
+            color: #fff;
+        }
+        .cardContent{
+            position: relative;
+            padding: 1rem;
+            background: #191C24;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            h3{
+                font-size: var(--h3FontSize);
+                margin-top: 1rem;
+                padding: 1rem 0;
+                font-weight: 800;
+                color: #fff;
+            }
+            p{
+                font-size: var(--normalFontSize);
+                color: #fff;
+                padding-bottom: 1rem;
+                font-weight: 500;
+            }
+            .btn{
+                position: relative;
+                color: var(--textColor);
+                z-index: 1000;
+            }
+            .circle1, .circle2{
+                position: absolute;
+                background-color: #242938;
+                border-radius: 50%;
+                opacity: .7;
+            }
+
+            .circle1{
+                height: 100px;
+                width: 100px;
+                top: -50px;
+                left: -50px;
+            }
+            .circle2{
+                height: 150px;
+                width: 150px;
+                bottom: -80px;
+                right: -70px;
+                z-index: 1;
+            }
+        }
+    }
+}

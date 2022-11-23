@@ -1,0 +1,117 @@
+
+.topSection{
+    padding: 1.5rem;
+    .headerSection{
+        justify-content: space-between;
+        @media screen and (max-width: 768px) {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            row-gap: 2rem;
+        }
+        .title{
+            @media screen and (max-width: 490px) {
+                text-align: center;
+                margin: auto;
+            }
+
+            h1{
+                font-size: var(--h1FontSize);
+                color: #fff;
+                font-weight: 700;
+            }
+            p{
+                font-size: var(--normalFontSize);
+                color: #ffffff;
+                font-weight: 500;
+            }
+        }
+
+        .wrapper{
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            @media screen and (max-width: 768px) {
+                justify-content: flex-end;
+            }
+            @media screen and (max-width: 500px) {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .searchBar{
+            padding: .5rem 1rem;
+            background: #191C24;
+            border-radius: 5px;
+            align-items: center;
+            @media screen and (max-width: 500px) {
+                width: 100%;
+            }
+
+            input{
+                border: none;
+                background: transparent;
+                color: #fff;
+                &::placeholder{
+                    color: #fff;
+                }
+                &:focus{
+                    outline: none;
+                }
+                @media screen and (max-width: 768px) {
+                    width: 100%;
+                }
+            }
+            .icon{
+                color: #fff;
+                &:hover{
+                    color: var(--PrimaryColor);
+                }
+            }
+        }
+
+        .adminDiv{
+            gap: 1rem;
+            align-items: center;
+            @media screen and (max-width: 500px) {
+                justify-content: flex-end;
+            }
+
+            .icon{
+                font-size: 30px;
+                background: #191C24;
+                border-radius: 5px;
+                padding: 5px;
+                color: #fff;
+                cursor: pointer;
+            }
+
+            .adminImage{
+                border: 3px solid #191C24;
+                border-radius: 10px;
+                width: 2.5rem;
+                height: 2.7rem;
+                overflow: hidden;
+                cursor: pointer;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 10px;
+                }
+            }
+            .bars{
+                display: none;
+                @media screen and (max-width: 1050px) {
+                    display: block;
+                    font-size: 30px;
+                    background: #191C24;
+                    border-radius: 5px;
+                    padding: 5px;
+                    color: #fff;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

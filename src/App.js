@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Body from './components/body selection/Body'
+import Top from './components/body selection/top selection/Top';
+import Sidebar from './components/sidebar selection/Sidebar'
+import Billing from './pages/billing/Billing';
+import Charts from './pages/charts/Chart';
+import Contract from './pages/contract/Contract';
+import Dashboard from './pages/dashboard/Dashboard';
+import Explore from './pages/explore/Explore';
+import Orders from './pages/orders/Orders';
+import Products from './pages/products/Products';
+import Trends from './pages/trends/Trends';
+import Login from "./pages/login/Login"
+import Signup from './pages/signup/Signup';
 
-function App() {
+const App = () => {
+
+  const [open, setOpen] = useState(false);
+
+  const handle = () => {
+    setOpen(!open)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Login />} />
+            <Route path='/signup' element={<Signup />} />
+            <Route path='/home' element={<Dashboard />} />
+            <Route path='/orders' element={<Orders />} />
+            <Route path='/explore' element={<Explore />} />
+            <Route path='/products' element={<Products />} />
+            <Route path='/charts' element={<Charts />} />
+            <Route path='/trends' element={<Trends />} />
+            <Route path='/contract' element={<Contract />} />
+            <Route path='/billing' element={<Billing />} />
+            <Route path='*' element={<h1> Page Not Found! </h1>} />
+          </Routes>
+      </BrowserRouter>
+    </>
+  )
 }
 
-export default App;
+export default App
