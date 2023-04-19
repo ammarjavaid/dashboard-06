@@ -1,21 +1,21 @@
-import React from 'react'
+import React, { memo } from 'react'
 import "./top.scss"
 import { BiSearchAlt } from "react-icons/bi"
-import { TbMessageCircle } from "react-icons/tb"
-import { IoNotificationsOutline } from "react-icons/io5"
-import admin from "../../../images/admin.jpg"
+import admin from "../../../images/Ammar4.jpg"
 import { AiOutlineMenu } from 'react-icons/ai';
 import { IoMdClose } from 'react-icons/io';
 
 const Top = ({ open, setOpen, handle }) => {
+
+  console.log("Top Render.....!")
 
   return (
     <>
       <div className="topSection">
         <div className='headerSection flex'>
           <div className='title'>
-            <h1> Welcome to Corona Dashboard. </h1>
-            <p> Hello AmmarTech, Welcome back! </p>
+            <h1> Welcome to Personal Dashboard. </h1>
+            <p> Hello Ammar Javaid, Welcome back! </p>
           </div>
 
           <div className="wrapper">
@@ -26,8 +26,6 @@ const Top = ({ open, setOpen, handle }) => {
             </div>
 
             <div className='adminDiv flex'>
-              <TbMessageCircle className="icon"/>
-              <IoNotificationsOutline className="icon" />
               {open ? <IoMdClose onClick={handle} className="bars" /> : <AiOutlineMenu onClick={handle} className="bars" />}
               <div className='adminImage'>
                 <img src={admin} alt='img' />
@@ -42,4 +40,4 @@ const Top = ({ open, setOpen, handle }) => {
   )
 }
 
-export default Top
+export default memo(Top)

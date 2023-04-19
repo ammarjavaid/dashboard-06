@@ -1,15 +1,17 @@
+
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBOfYYAXQU0KlFMY7sGDsU9PPJWQ8Up7bQ",
-  authDomain: "dashboard-06.firebaseapp.com",
-  projectId: "dashboard-06",
-  storageBucket: "dashboard-06.appspot.com",
-  messagingSenderId: "183769314289",
-  appId: "1:183769314289:web:39b3854a3a959c4e420a50"
+  apiKey: "AIzaSyBo4md05a12-AUPneUyO-llnshrTuHSS3M",
+  authDomain: "personal-firebase-database.firebaseapp.com",
+  projectId: "personal-firebase-database",
+  storageBucket: "personal-firebase-database.appspot.com",
+  messagingSenderId: "673398295637",
+  appId: "1:673398295637:web:2ec045d964ebc2c83798dc"
 };
 
-
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
+
+export const db = getFirestore(app);
